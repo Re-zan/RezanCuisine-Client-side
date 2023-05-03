@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.title_text {
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+.descripction {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+}
+.my_conatiner {
+  @apply sm:max-w-xl md:max-w-full lg:max-w-screen-xl mx-auto;
+}
