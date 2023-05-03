@@ -27,8 +27,6 @@ const Register = () => {
         const loggedUser = resutlt.user;
         profile(loggedUser, name, photo);
         form.reset();
-
-        console.log(loggedUser);
       })
       .catch((error) => {
         const errorMessage = error.message;

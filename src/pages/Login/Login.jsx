@@ -5,8 +5,10 @@ import { AuthContext } from "../../providers/AuthProviders";
 const Login = () => {
   const { login, googleLogin } = useContext(AuthContext);
   //states
+
   const [error, setError] = useState("");
   //login start
+
   const handelarLogin = (event) => {
     event.preventDefault();
     setError("");
@@ -17,7 +19,6 @@ const Login = () => {
     login(email, password)
       .then((reult) => {
         const loggedUser = reult.user;
-        console.log(loggedUser);
         form.reset();
       })
       .catch((error) => {
@@ -28,6 +29,7 @@ const Login = () => {
   const handeleraGoogle = () => {
     googleLogin();
   };
+
   return (
     <div className=" text-center bg-[#FAF9F6] sm:py-7 md:py-32">
       <div className="my_conatiner">
@@ -42,7 +44,6 @@ const Login = () => {
               placeholder="Enter your email"
               className="input input-bordered my-2 py-4 rounded-none"
               name="email"
-              required
             />
           </div>
           <div className="form-control">
@@ -51,7 +52,6 @@ const Login = () => {
               placeholder="Enter your password"
               className="input input-bordered my-2 py-4 rounded-none"
               name="password"
-              required
             />
             <label className="label">
               <a
