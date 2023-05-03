@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -25,49 +25,75 @@ const Navbar = () => {
           <ul
             tabIndex={0}
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
-          ></ul>
+          >
+            <NavLink
+              to="/"
+              className={({ isActive }) => (isActive ? "text-red-600" : "")}
+            >
+              <li className="mx-3 text-xl font-medium transition  duration-300 ease-in-out  hover:border-t-2 hover:border-red-800">
+                Home
+              </li>
+            </NavLink>
+            <NavLink
+              to="/about"
+              className={({ isActive }) => (isActive ? "text-red-600" : "")}
+            >
+              <li className="mx-3 text-xl font-medium transition  duration-300 ease-in-out  hover:border-t-2 hover:border-red-800">
+                About
+              </li>
+            </NavLink>
+            <NavLink
+              to="/blog"
+              className={({ isActive }) => (isActive ? "text-red-600" : "")}
+            >
+              <li className="mx-3 text-xl font-medium transition  duration-300 ease-in-out hover:border-t-2 hover:border-red-800">
+                Blog
+              </li>
+            </NavLink>
+          </ul>
         </div>
         <Link
           to="/"
-          className="btn btn-ghost normal-case text-3xl hover:bg-transparent hover:scale-y-50"
+          className="btn btn-ghost normal-case sm:text-2xl md:text-3xl hover:bg-transparent hover:scale-y-50"
         >
           Re-zan<span className=" text-red-600">Cuisine</span>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
-          <li>
-            <a>Item 1</a>
-          </li>
-          <li tabIndex={0}>
-            <a>
-              Parent
-              <svg
-                className="fill-current"
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-              >
-                <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
-              </svg>
-            </a>
-            <ul className="p-2">
-              <li>
-                <a>Submenu 1</a>
-              </li>
-              <li>
-                <a>Submenu 2</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a>Item 3</a>
-          </li>
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? "text-red-600" : "")}
+          >
+            <li className="mx-3 text-xl font-medium transition  duration-300 ease-in-out  hover:border-t-2 hover:border-red-800">
+              Home
+            </li>
+          </NavLink>
+          <NavLink
+            to="/about"
+            className={({ isActive }) => (isActive ? "text-red-600" : "")}
+          >
+            <li className="mx-3 text-xl font-medium transition  duration-300 ease-in-out  hover:border-t-2 hover:border-red-800">
+              About
+            </li>
+          </NavLink>
+          <NavLink
+            to="/blog"
+            className={({ isActive }) => (isActive ? "text-red-600" : "")}
+          >
+            <li className="mx-3 text-xl font-medium transition  duration-300 ease-in-out hover:border-t-2 hover:border-red-800">
+              Blog
+            </li>
+          </NavLink>
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Get started</a>
+        <Link
+          to="/login"
+          className="btn bg-red-600 rounded-none sm:text-sm md:text-xl font-normal border-0"
+        >
+          Login
+        </Link>
       </div>
     </div>
   );
