@@ -16,6 +16,9 @@ body {
   font-weight: 300;
   font-size: 16px;
 }
+.bttn {
+  @apply btn bg-red-600 rounded-none sm:text-sm md:text-xl font-normal border-0;
+}
 .my_conatiner {
   @apply sm:max-w-xl md:max-w-full lg:max-w-screen-xl mx-auto;
 }
