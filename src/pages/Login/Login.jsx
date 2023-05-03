@@ -3,14 +3,21 @@ import { Form, Link } from "react-router-dom";
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { AuthContext } from "../../providers/AuthProviders";
 const Login = () => {
-  const { login, googleLogin } = useContext(AuthContext);
+  const { login, googleLogin, githubLogin } = useContext(AuthContext);
   //states
 
   const [error, setError] = useState("");
   //login start
+  const handeleraGoogle = () => {
+    googleLogin();
+  };
 
+  const handeleraGithub = () => {
+    githubLogin();
+  };
   const handelarLogin = (event) => {
     event.preventDefault();
+
     setError("");
     const form = event.target;
     const email = form.email.value;
@@ -19,15 +26,12 @@ const Login = () => {
     login(email, password)
       .then((reult) => {
         const loggedUser = reult.user;
+
         form.reset();
       })
       .catch((error) => {
         setError("User's email address or password doesn't match");
       });
-  };
-
-  const handeleraGoogle = () => {
-    googleLogin();
   };
 
   return (
@@ -85,7 +89,7 @@ const Login = () => {
             </button>
           </div>
 
-          <button className="btn btn-outline  w-full">
+          <button className="btn btn-outline  w-full" onClick={handeleraGithub}>
             {" "}
             <FaGithub className="me-2"></FaGithub>GitHub
           </button>
