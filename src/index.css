@@ -8,13 +8,11 @@ body {
 
 .title_text {
   font-family: "Playfair Display", serif;
-  font-size: 24px;
   font-weight: 700;
 }
 .descripction {
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
-  font-size: 16px;
 }
 .bttn {
   @apply btn bg-red-600 rounded-none sm:text-sm md:text-xl font-normal border-0;

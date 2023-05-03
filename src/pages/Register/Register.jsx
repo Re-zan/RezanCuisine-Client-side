@@ -4,7 +4,7 @@ const Register = () => {
   return (
     <div className=" text-center bg-[#FAF9F6] sm:py-7 md:py-32">
       <div className="my_conatiner">
-        <Form className="sm:w-6/12 md:w-8/12 sm:px-6 md:px-24 py-10 sm:mx-0 md:mx-auto  bg-red-50  shadow-lg">
+        <Form className="sm:w-6/12 md:w-8/12 sm:px-6 md:px-24 py-10 sm:mx-0 md:mx-auto  bg-red-50  border rounded shadow-lg">
           <h2 className="title_text py-3">Register Now</h2>
 
           <div className="form-control  ">

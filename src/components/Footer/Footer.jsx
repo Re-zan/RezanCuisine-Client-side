@@ -7,9 +7,10 @@ import { Link, NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div>
+    <footer>
+      {/* footer text part start */}
       <div className="text-center bg-slate-700 p-10 md:p-20 text-white">
-        <h2 className=" title_text text-3xl"> Re-zanCuisine Developer </h2>
+        <h2 className=" title_text text-4xl"> Re-zanCuisine Developer </h2>
         <p className="descripction my-4 leading-8">
           Lorem Ipsum is simply dummy text of the printing and typesetting{" "}
           industry. It has survived not only five centuries,<br></br> but also
@@ -41,8 +42,10 @@ const Footer = () => {
           </Link>
         </div>
       </div>
+      {/* footer text part end */}
+      {/* footer bottom start */}
       <div className=" bg-gray-800  flex justify-between text-white items-center px-11 py-7">
-        <p className="text-center md:text-left">
+        <p className="text-center lg:text-left">
           Copyright{" "}
           <span className="mx-1">
             {" "}
@@ -55,7 +58,9 @@ const Footer = () => {
             </Link>{" "}
           </span>{" "}
         </p>
-        <div className="navbar-center hidden lg:flex">
+
+        {/* footer menu part start */}
+        <div className="navbar-center hidden md:block lg:flex">
           <ul className="menu menu-horizontal px-1">
             <NavLink
               to="/"
@@ -77,8 +82,11 @@ const Footer = () => {
             </NavLink>
           </ul>
         </div>
+        {/* footer menu part end */}
       </div>
-    </div>
+
+      {/* footer bottom end */}
+    </footer>
   );
 };
 
