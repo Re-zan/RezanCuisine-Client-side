@@ -9,12 +9,12 @@ const Banner = () => {
       className="flex justify-center items-center text-center banner bg-cover bg-no-repeat h-[750px]"
       style={{ backgroundImage: `url(${bannerImg})` }}
     >
-      <div className=" w-7/12  my-24 banner_content">
+      <div className=" w-7/12  my-28 md:my-24 banner_content p-3 bg-base-100 md:bg-transparent bg-opacity-60 lg:bg-opacity-0">
         {" "}
         <h2 className="title_text text-2xl md:text-4xl lg:text-6xl text-red-700 font-semibold">
           Re-zanCuisine has many <br></br> amazing recipes...
         </h2>
-        <p className="my-10  text-gray-800 text-base md:text-xl font-medium">
+        <p className="my-10  text-gray-800 text-base md:text-xl font-medium ">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam
           repellendus sapiente voluptatum quisquam. Provident quis odio animi
           dolorem illum asperiores cum molestiae, omnis incidunt totam voluptas,

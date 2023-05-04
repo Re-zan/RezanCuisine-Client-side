@@ -19,12 +19,15 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:3000/"),
+        loader: () => fetch("https://re-zancuisine-server-re-zan.vercel.app"),
       },
       {
         path: "chefrecipes/:id",
         element: <ChefDetailsPage></ChefDetailsPage>,
-        // loader: () => fetch("http://localhost:3000/"),
+        loader: ({ params }) =>
+          fetch(
+            `https://re-zancuisine-server-re-zan.vercel.app/chefrecipes/${params.id}`
+          ),
       },
       {
         path: "about",
