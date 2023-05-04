@@ -1,12 +1,17 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { Form, Link } from "react-router-dom";
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { AuthContext } from "../../providers/AuthProviders";
-const Login = () => {
-  const { login, googleLogin, githubLogin } = useContext(AuthContext);
-  //states
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
+const Login = () => {
+  const { login, googleLogin, githubLogin, resetPass } =
+    useContext(AuthContext);
+  //states
   const [error, setError] = useState("");
+
+  const emailref = useRef();
   //login start
   const handeleraGoogle = () => {
     googleLogin();
@@ -30,13 +35,27 @@ const Login = () => {
         form.reset();
       })
       .catch((error) => {
+        console.log(error.message);
         setError("User's email address or password doesn't match");
       });
+  };
+  const resetPassword = () => {
+    const email = emailref.current.value;
+    if (!email) {
+      toast.error("Email feild can't be empty");
+    } else {
+      resetPass(email)
+        .then((result) => {
+          toast.success("Check your mail");
+        })
+        .catch(error);
+    }
   };
 
   return (
     <div className=" text-center bg-[#FAF9F6] sm:py-7 md:py-32">
       <div className="my_conatiner">
+        <ToastContainer />
         <Form
           onSubmit={handelarLogin}
           className="sm:w-6/12 md:w-8/12 sm:px-6 md:px-24 py-10 sm:mx-0 md:mx-auto   bg-red-50 border rounded  shadow-lg"
@@ -47,6 +66,7 @@ const Login = () => {
               type="email"
               placeholder="Enter your email"
               className="input input-bordered my-2 py-4 rounded-none"
+              ref={emailref}
               name="email"
             />
           </div>
@@ -61,6 +81,7 @@ const Login = () => {
               <a
                 href="#"
                 className="label-text-alt link link-hover text-red-700"
+                onClick={resetPassword}
               >
                 Forgot password?
               </a>

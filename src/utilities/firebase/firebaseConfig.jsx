@@ -4,13 +4,14 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+
 const firebaseConfig = {
-  apiKey: "AIzaSyCG6OalzaWKgzMTftKO9nGNeiBiDIu3230",
-  authDomain: "rezancuisine.firebaseapp.com",
-  projectId: "rezancuisine",
-  storageBucket: "rezancuisine.appspot.com",
-  messagingSenderId: "264775266080",
-  appId: "1:264775266080:web:33fd34d993ab8836317145",
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId,
 };
 
 // Initialize Firebase

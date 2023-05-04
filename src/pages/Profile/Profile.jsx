@@ -5,12 +5,12 @@ import { AuthContext } from "../../providers/AuthProviders";
 const Profile = () => {
   const { user, profile } = useContext(AuthContext);
   const handelarUpdate = (event) => {
-    event.preventDefault();
     const form = event.target;
     const name = form.name.value;
     const photo = form.photo.value;
 
     profile(user, name, photo);
+    form.reset();
   };
   return (
     <div className=" text-center bg-[#FAF9F6] sm:py-7 md:py-32">

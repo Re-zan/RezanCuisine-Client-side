@@ -9,6 +9,7 @@ import {
   signInWithPopup,
   signOut,
   GithubAuthProvider,
+  sendPasswordResetEmail,
 } from "firebase/auth";
 import app from "../utilities/firebase/firebaseConfig";
 
@@ -43,6 +44,7 @@ const AuthProviders = ({ children }) => {
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (loggedInUser) => {
       setUser(loggedInUser);
+      setLoader(false);
     });
     return () => {
       unSubscribe();
@@ -62,6 +64,10 @@ const AuthProviders = ({ children }) => {
     signInWithPopup(auth, Githubprovider);
   };
 
+  const resetPass = (email) => {
+    return sendPasswordResetEmail(auth, email);
+  };
+
   const authInfo = {
     user,
     register,
@@ -70,6 +76,8 @@ const AuthProviders = ({ children }) => {
     googleLogin,
     githubLogin,
     logOut,
+    loader,
+    resetPass,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

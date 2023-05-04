@@ -1,13 +1,24 @@
-import React, { useContext, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProviders";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
-  console.log(user);
+  console.log(user?.email);
+  const navigator = useNavigate();
 
   const handelLogOut = () => {
     logOut();
+    navigator("/");
+  };
+  const handCursor = (e) => {
+    e.target.style.cursor = "pointer";
+  };
+  const showName = () => {
+    document.getElementById("displayName").innerText = user.displayName;
+  };
+  const disAbleName = () => {
+    document.getElementById("displayName").innerText = "";
   };
   return (
     <div className="navbar bg-base-100 my_conatiner py-6">
@@ -98,16 +109,21 @@ const Header = () => {
         {user ? (
           <>
             <div className="dropdown dropdown-end">
-              <label
-                tabIndex={0}
-                className="btn btn-ghost btn-circle avatar"
-                name="name"
-              >
-                <div className="w-10 rounded-full">
-                  <img src={user.photoURL} alt={user.displayName} />
-                  <p className=" text-red-800">{user.email}</p>
+              <label tabIndex={0} className="avatar indicator" name="name">
+                <p
+                  className="indicator-item badge bg-transparent text-red-500 text-xl border-0"
+                  id="displayName"
+                ></p>
+                <div className="w-14 h-14 rounded-full">
+                  <img
+                    src={user.photoURL}
+                    alt={user.displayName}
+                    onMouseOver={showName}
+                    onMouseOut={disAbleName}
+                  />
                 </div>
               </label>
+
               <ul
                 tabIndex={0}
                 className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
@@ -117,7 +133,9 @@ const Header = () => {
                   <li className="justify-between">Profile</li>
                 </Link>
 
-                <li onClick={handelLogOut}>Logout</li>
+                <li onClick={handelLogOut} onMouseOver={handCursor} id="courP">
+                  Logout
+                </li>
               </ul>
             </div>
           </>
