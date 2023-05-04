@@ -4,7 +4,6 @@ import { AuthContext } from "../../providers/AuthProviders";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
-  console.log(user?.email);
   const navigator = useNavigate();
 
   const handelLogOut = () => {

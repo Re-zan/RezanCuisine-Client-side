@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Banner = () => {
   return (
     <div
-      className="flex justify-center items-center text-center banner bg-cover bg-no-repeat h-[700px]"
+      className="flex justify-center items-center text-center banner bg-cover bg-no-repeat h-[750px]"
       style={{ backgroundImage: `url(${bannerImg})` }}
     >
       <div className=" w-7/12  my-24 banner_content">
