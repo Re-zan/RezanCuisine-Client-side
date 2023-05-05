@@ -1,5 +1,6 @@
 import React from "react";
 import { FaCalculator, FaEye, FaUserClock, FaThumbsUp } from "react-icons/fa";
+import LazyLoad from "react-lazy-load";
 import { Link } from "react-router-dom";
 
 const Chefsection = ({ chefData }) => {
@@ -8,11 +9,14 @@ const Chefsection = ({ chefData }) => {
   return (
     <div className="card  bg-base-100 shadow-xl rounded-none">
       <figure>
-        <img
-          src={img_url}
-          alt={chef}
-          className=" h-60 w-full object-cover relative img_hover"
-        />
+        <LazyLoad width={500} effect={blur}>
+          <img
+            src={img_url}
+            alt={chef}
+            className=" h-60 w-full object-cover relative img_hover"
+          />
+        </LazyLoad>
+
         <Link to={`/chefrecipes/${id}`}>
           <div className="badge border-0 absolute top-0 end-0 p-4 mt-5 me-5 bg-red-600">
             <FaEye className="me-2"></FaEye> View Recipes

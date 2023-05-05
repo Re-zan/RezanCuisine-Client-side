@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Form, Link } from "react-router-dom";
+import { Form, Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProviders";
 const Register = () => {
   //context
@@ -7,6 +7,7 @@ const Register = () => {
 
   //states
   const [error, setError] = useState("");
+  const navigate = useNavigate();
   //register start
   const handalerRegister = (event) => {
     event.preventDefault();
@@ -27,6 +28,7 @@ const Register = () => {
         const loggedUser = resutlt.user;
         profile(loggedUser, name, photo);
         form.reset();
+        navigate("/");
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -48,7 +50,6 @@ const Register = () => {
               placeholder="Enter your name"
               className="input input-bordered   md:my-2 md:py-4 rounded-none"
               name="name"
-              required
             />
           </div>
           <div className="form-control">
@@ -63,10 +64,9 @@ const Register = () => {
           <div className="form-control">
             <input
               type="text"
-              placeholder="Enter your photo"
+              placeholder="Enter your photo url:"
               className="input input-bordered my-2 py-4 rounded-none"
               name="photo"
-              required
             />
           </div>
           <div className="form-control">

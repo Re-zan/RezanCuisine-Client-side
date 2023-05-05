@@ -8,6 +8,7 @@ import mostFavImg from "../../assets/images/Banner/banner1.png";
 import Trending from "../../components/Trending/Trending";
 import contact from "../../../public/contact.json";
 import Lottie from "lottie-react";
+import LazyLoad from "react-lazy-load";
 
 const Home = () => {
   const chefDatas = useLoaderData();
@@ -28,6 +29,11 @@ const Home = () => {
     if (datas.likes > 200) {
       mostTrendingData.push(datas);
     }
+  }
+
+  const ruiyeery = [];
+  for (let datas of chefDatas) {
+    console.log(datas.best_recipes);
   }
 
   return (
@@ -53,11 +59,14 @@ const Home = () => {
             ))}
           </div>
           <div className="relative">
-            <img
-              src={mostFavImg}
-              alt="Most favorite datas"
-              className="h-full"
-            />
+            <LazyLoad height={862}>
+              <img
+                src={mostFavImg}
+                alt="Most favorite datas"
+                className="h-full"
+              />
+            </LazyLoad>
+
             <div className="overly absolute top-0 end-0 bg-base-200 start-0 bottom-0 h-full bg-opacity-25">
               {" "}
             </div>
@@ -76,7 +85,7 @@ const Home = () => {
 
         {/* contact part start  */}
         <div className="grid grid-cols-1 lg:grid-cols-2 my-20 ">
-          <div className="text-left mt-40">
+          <div className="text-center lg:text-left mt-7 md:mt-40">
             <h2 className="title_text text-4xl my-7 text-red-700">
               Contact Yet !!
             </h2>
