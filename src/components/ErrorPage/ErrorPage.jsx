@@ -1,6 +1,6 @@
 import React from "react";
 import Lottie from "lottie-react";
-import errorPage from "../../../public/error.json";
+import errorPage from "../Animate/error.json";
 import { Link } from "react-router-dom";
 
 const ErrorPage = () => {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Banner from "../../components/Banner/Banner";
 import Chefsection from "../../components/ChefSection/Chefsection";
 import { useLoaderData } from "react-router-dom";
@@ -6,9 +6,10 @@ import Heading from "../../components/Heading/Heading";
 import Popular from "../../components/Poppular/Popular";
 import mostFavImg from "../../assets/images/Banner/banner1.png";
 import Trending from "../../components/Trending/Trending";
-import contact from "../../../public/contact.json";
+import contact from "../../components/Animate/contact.json";
 import Lottie from "lottie-react";
 import LazyLoad from "react-lazy-load";
+import bannerImg from "../../assets/images/Banner/banner.jpg";
 
 const Home = () => {
   const chefDatas = useLoaderData();
@@ -39,7 +40,15 @@ const Home = () => {
   return (
     <div>
       {/* banner part start */}
-      <Banner></Banner>
+      <Banner
+        imgData={`${bannerImg}`}
+        title="Re-zanCuisine has many amazing recipes... "
+        btnDes="Explore The Recipes"
+        desc=" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam
+        repellendus sapiente voluptatum quisquam. Provident quis odio animi
+        dolorem illum asperiores cum molestiae, omnis incidunt totam voluptas,
+        optio quo expedita mollitia minus fuga accusantium odit suscipit."
+      ></Banner>
       {/* banner part end */}
       <div className="my_conatiner my-36">
         {/* chef section start */}
