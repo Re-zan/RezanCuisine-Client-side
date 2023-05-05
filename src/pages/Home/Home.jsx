@@ -4,7 +4,7 @@ import Chefsection from "../../components/ChefSection/Chefsection";
 import { useLoaderData } from "react-router-dom";
 import Heading from "../../components/Heading/Heading";
 import Popular from "../../components/Poppular/Popular";
-import mostFavImg from "../../assets/images/Banner/banner1.png";
+import mostFavImg from "../../assets/images/Banner/156-v_m1.jpg";
 import Trending from "../../components/Trending/Trending";
 import contact from "../../components/Animate/contact.json";
 import Lottie from "lottie-react";
@@ -30,11 +30,6 @@ const Home = () => {
     if (datas.likes > 200) {
       mostTrendingData.push(datas);
     }
-  }
-
-  const ruiyeery = [];
-  for (let datas of chefDatas) {
-    console.log(datas.best_recipes);
   }
 
   return (

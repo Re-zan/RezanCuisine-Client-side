@@ -11,7 +11,7 @@ const Footer = () => {
       {/* footer text part start */}
       <div className="text-center bg-slate-700 p-10 md:p-20 text-white">
         <h2 className=" title_text text-4xl"> Re-zanCuisine Developer </h2>
-        <p className="descripction my-4 leading-8">
+        <p className="descripction my-4 leading-8 pt-4">
           Lorem Ipsum is simply dummy text of the printing and typesetting{" "}
           industry. It has survived not only five centuries,<br></br> but also
           the leap into electronic typesetting, remaining essentially unchanged.{" "}
