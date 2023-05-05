@@ -20,3 +20,7 @@ body {
 .my_conatiner {
   @apply sm:max-w-xl md:max-w-full lg:max-w-screen-xl mx-auto;
 }
+
+.img_hover {
+  @apply transition duration-300 transform ease-in-out hover:scale-105;
+}

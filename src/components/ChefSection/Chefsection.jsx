@@ -16,7 +16,7 @@ const Chefsection = ({ chefData }) => {
         <img
           src={img_url}
           alt={chef}
-          className=" h-60 w-full object-cover relative transition duration-200 transform ease-in-out hover:scale-105"
+          className=" h-60 w-full object-cover relative img_hover"
         />
         <Link to={`/chefrecipes/${id}`}>
           <div className="badge border-0 absolute top-0 end-0 p-4 mt-5 me-5 bg-red-600">

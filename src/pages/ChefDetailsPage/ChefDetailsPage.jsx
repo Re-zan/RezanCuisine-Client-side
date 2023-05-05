@@ -1,16 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import bannerImg from "../../assets/images/Banner/banner2.jpg";
-import { FaCalculator, FaPeopleArrows, FaThumbsUp } from "react-icons/fa";
+import {
+  FaCalculator,
+  FaHeart,
+  FaPeopleArrows,
+  FaThumbsUp,
+} from "react-icons/fa";
 import Heading from "../../components/Heading/Heading";
+import { Rating } from "@smastrom/react-rating";
+import "@smastrom/react-rating/style.css";
+import { ToastContainer, toast } from "react-toastify";
 
 const ChefDetailsPage = () => {
   const { id } = useParams();
   const data = useLoaderData();
-  const { img_url, chef, bio, years_of_experience, num_recipes, likes } = data;
-  console.log(data);
+  const {
+    img_url,
+    chef,
+    bio,
+    years_of_experience,
+    num_recipes,
+    likes,
+    best_recipes,
+  } = data;
+
+  const [hiddenBtn, setHiddenBtn] = useState(true);
+  const handelarReact = () => {
+    toast.success("This is my favourite recipe");
+  };
   return (
     <div>
+      <ToastContainer></ToastContainer>
       {/* banner part start */}
       <div
         className="hero min-h-screen"
@@ -44,22 +65,99 @@ const ChefDetailsPage = () => {
               </div>
             </div>
           </div>
-          <div className="max-w-md">
-            <img src={img_url} alt="" className="h-full w-full rounded-full " />{" "}
+          <div className="max-w-md  ">
+            <img
+              src={img_url}
+              alt=""
+              className="h-full w-full rounded-full img_hover hover:border-red-500 hover:border-2"
+            />{" "}
           </div>
         </div>
       </div>
       {/* banner part end */}
-      <div className="my_conatiner my-20">
-        <Heading title={`${chef} best recipes`}></Heading>
 
-        <div className=" collapse collapse-plus border border-base-300 bg-base-100 rounded-box">
-          <input type="checkbox" className="peer" />
-          <div className="collapse-title ">Click me to show/hide content</div>
-          <div className="collapse-content ">
-            <p>hello</p>
-          </div>
-        </div>
+      <div className="my_conatiner my-20">
+        {/* headeing part start  */}
+        <Heading title={`${chef} Best Recipes`}></Heading>
+        {/* headeing part end  */}
+
+        {/*  chef content start  */}
+        {best_recipes.map((recipe) => {
+          return (
+            <div className=" w-10/12 mx-auto collapse collapse-plus border border-base-300 bg-white my-8">
+              <input type="checkbox" className="peer" />
+              <div className="collapse-title title_text text-red-700  text-2xl shadow-lg">
+                {recipe.name}
+              </div>
+              <div className="collapse-content">
+                <div className="grid grid-cols-1 lg:grid-cols-3">
+                  <div className="p-10 title_text text-red-600">
+                    <p className="decoration-solid text-2xl mb-4">
+                      Ingredients:
+                    </p>
+                    <ul>
+                      {recipe.ingredients.map((ing) => (
+                        <li className="list-disc ms-4 descripction">{ing} </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="py-10 ms-4 md:ms-0 me-5 px-0 md:px-8 lg:px-0 title_text text-red-600">
+                    <p className="decoration-solid text-2xl mb-4">
+                      Cooking method:
+                    </p>
+                    <ul>
+                      {recipe.cooking_method.map((cook) => (
+                        <li className="list-decimal descripction ms-4">
+                          {cook}{" "}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="py-10 ">
+                    <img
+                      src={recipe.recipe_img}
+                      alt={recipe.name}
+                      className="h-full img_hover w-full "
+                    />
+                  </div>
+                </div>
+
+                <div className="border-t-2 py-4 border-red-700 flex justify-between">
+                  <div
+                    className={`${hiddenBtn ? "" : "hidden"}`}
+                    onClick={handelarReact}
+                  >
+                    <button
+                      className="btn bttn "
+                      onClick={() => setHiddenBtn(!hiddenBtn)}
+                    >
+                      Favorite recipe{" "}
+                      <span className="ms-3">
+                        <FaHeart />
+                      </span>{" "}
+                    </button>
+                  </div>
+
+                  <div className="flex items-center">
+                    <Rating
+                      style={{
+                        maxWidth: 120,
+                        width: "100%",
+                        marginRight: "10px",
+                        color: "red",
+                      }}
+                      readOnly
+                      orientation="horizantal"
+                      value={recipe.rating}
+                    />
+                    <span>{recipe.rating}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+        {/*  chef content end  */}
       </div>
     </div>
   );
