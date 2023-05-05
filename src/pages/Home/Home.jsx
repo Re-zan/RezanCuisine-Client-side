@@ -5,6 +5,7 @@ import { useLoaderData } from "react-router-dom";
 import Heading from "../../components/Heading/Heading";
 import Popular from "../../components/Poppular/Popular";
 import mostFavImg from "../../assets/images/Banner/banner1.png";
+import Trending from "../../components/Trending/Trending";
 
 const Home = () => {
   const chefDatas = useLoaderData();
@@ -19,7 +20,13 @@ const Home = () => {
     }
   }
 
-  console.log(mostPopularData);
+  //most trending
+  const mostTrendingData = [];
+  for (let datas of chefDatas) {
+    if (datas.likes > 200) {
+      mostTrendingData.push(datas);
+    }
+  }
 
   return (
     <div>
@@ -49,12 +56,21 @@ const Home = () => {
               alt="Most favorite datas"
               className="h-full"
             />
-            <div className="overly absolute top-0 end-0 bg-base-200 start-0 bottom-0 h-full bg-opacity-50">
+            <div className="overly absolute top-0 end-0 bg-base-200 start-0 bottom-0 h-full bg-opacity-25">
               {" "}
             </div>
           </div>
         </div>
         {/* most popular section end */}
+
+        {/* chef section start */}
+        <Heading title="Most Trending Recipes"></Heading>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 my-10">
+          {mostTrendingData.map((data) => (
+            <Trending key={data.id} chefData={data}></Trending>
+          ))}
+        </div>
+        {/* chef section end */}
       </div>
     </div>
   );

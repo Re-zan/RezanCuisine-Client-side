@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  FaCalculator,
-  FaEye,
-  FaPeopleArrows,
-  FaThumbsUp,
-} from "react-icons/fa";
+import { FaCalculator, FaEye, FaUserClock, FaThumbsUp } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Chefsection = ({ chefData }) => {
@@ -32,7 +27,7 @@ const Chefsection = ({ chefData }) => {
         <div className="card-actions flex justify-between">
           <div className="flex items-center">
             {" "}
-            <FaPeopleArrows className="me-2 text-red-700"></FaPeopleArrows>
+            <FaUserClock className="me-2 text-red-700"></FaUserClock>
             <span>: {years_of_experience} year </span>
           </div>
           <div className="flex items-center">
