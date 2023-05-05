@@ -6,6 +6,8 @@ import Heading from "../../components/Heading/Heading";
 import Popular from "../../components/Poppular/Popular";
 import mostFavImg from "../../assets/images/Banner/banner1.png";
 import Trending from "../../components/Trending/Trending";
+import contact from "../../../public/contact.json";
+import Lottie from "lottie-react";
 
 const Home = () => {
   const chefDatas = useLoaderData();
@@ -63,14 +65,33 @@ const Home = () => {
         </div>
         {/* most popular section end */}
 
-        {/* chef section start */}
+        {/* trending part start */}
         <Heading title="Most Trending Recipes"></Heading>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 my-10">
           {mostTrendingData.map((data) => (
             <Trending key={data.id} chefData={data}></Trending>
           ))}
         </div>
-        {/* chef section end */}
+        {/* trending part end */}
+
+        {/* contact part start  */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 my-20 ">
+          <div className="text-left mt-40">
+            <h2 className="title_text text-4xl my-7 text-red-700">
+              Contact Yet !!
+            </h2>
+            <p className="descripction leading-7">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi
+              magnam itaque cumque vel assumenda fuga rem voluptatum eos eum
+              porro delectus, quidem, corrupti alias eveniet tempore nihil!
+            </p>
+            <button className="bttn my-6"> Contact Now</button>
+          </div>
+          <div>
+            <Lottie animationData={contact} loop={true} />
+          </div>
+        </div>
+        {/* contact part end  */}
       </div>
     </div>
   );
