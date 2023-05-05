@@ -9,6 +9,7 @@ import Layout from "../Layout/Layout";
 import Profile from "../pages/Profile/Profile";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
 import ChefDetailsPage from "../pages/ChefDetailsPage/ChefDetailsPage";
+import PrivateRoutes from "./PrivateRoutes";
 
 const router = createBrowserRouter([
   {
@@ -23,7 +24,12 @@ const router = createBrowserRouter([
       },
       {
         path: "chefrecipes/:id",
-        element: <ChefDetailsPage></ChefDetailsPage>,
+        element: (
+          <PrivateRoutes>
+            {" "}
+            <ChefDetailsPage></ChefDetailsPage>
+          </PrivateRoutes>
+        ),
         loader: ({ params }) =>
           fetch(
             `https://re-zancuisine-server-re-zan.vercel.app/chefrecipes/${params.id}`

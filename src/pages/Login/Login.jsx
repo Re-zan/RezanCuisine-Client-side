@@ -1,5 +1,5 @@
 import React, { useContext, useRef, useState } from "react";
-import { Form, Link } from "react-router-dom";
+import { Form, Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { AuthContext } from "../../providers/AuthProviders";
 import { ToastContainer, toast } from "react-toastify";
@@ -11,14 +11,21 @@ const Login = () => {
   //states
   const [error, setError] = useState("");
 
+  //private route procees
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+
   const emailref = useRef();
   //login start
   const handeleraGoogle = () => {
     googleLogin();
+    navigate(from, { replace: true });
   };
 
   const handeleraGithub = () => {
     githubLogin();
+    navigate(from, { replace: true });
   };
   const handelarLogin = (event) => {
     event.preventDefault();
@@ -31,8 +38,8 @@ const Login = () => {
     login(email, password)
       .then((reult) => {
         const loggedUser = reult.user;
-
         form.reset();
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error.message);
