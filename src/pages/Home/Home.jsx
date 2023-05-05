@@ -37,18 +37,21 @@ const Home = () => {
         {/* chef section end */}
         {/* most popular section start */}
         <Heading title="Most Popular Recipes"></Heading>
-        <div className="grid grid-cols-1 md:grid-cols-2   my-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2  my-14 ">
           <div className="grid grid-cols-1  md:grid-cols-2 gap-6">
             {mostPopularData.map((data) => (
               <Popular data={data}></Popular>
             ))}
           </div>
-          <div>
+          <div className="relative">
             <img
               src={mostFavImg}
               alt="Most favorite datas"
               className="h-full"
             />
+            <div className="overly absolute top-0 end-0 bg-base-200 start-0 bottom-0 h-full bg-opacity-50">
+              {" "}
+            </div>
           </div>
         </div>
         {/* most popular section end */}
