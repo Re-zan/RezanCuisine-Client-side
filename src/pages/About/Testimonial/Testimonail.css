@@ -1,0 +1,5 @@
+.swiper-pagination-clickable .swiper-pagination-bullet {
+  cursor: pointer;
+  background-color: red;
+  padding: 6px;
+}
