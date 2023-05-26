@@ -48,7 +48,7 @@ const Home = () => {
       <div className="my_conatiner my-36">
         {/* chef section start */}
         <Heading title="Our Best Chefs"></Heading>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14 my-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14 my-10 ">
           {chefDatas.map((data) => (
             <Chefsection key={data.id} chefData={data}></Chefsection>
           ))}
@@ -56,31 +56,27 @@ const Home = () => {
         {/* chef section end */}
         {/* most popular section start */}
         <Heading title="Most Popular Recipes"></Heading>
-        <div className="grid grid-cols-1 lg:grid-cols-2  my-14 ">
+        <div className="grid grid-cols-1 lg:grid-cols-2  my-14 lg:ml-12 md:ml-0 bg-white">
           <div className="grid grid-cols-1  md:grid-cols-2 gap-6">
             {mostPopularData.map((data) => (
               <Popular data={data}></Popular>
             ))}
           </div>
-          <div className="relative">
+          <div className="relative ">
             <LazyLoad height={862}>
               <img
                 src={mostFavImg}
                 alt="Most favorite datas"
-                className="h-full"
+                className="h-full lg:w-[550px] md:w-full "
               />
             </LazyLoad>
-
-            <div className="overly absolute top-0 end-0 bg-base-200 start-0 bottom-0 h-full bg-opacity-25">
-              {" "}
-            </div>
           </div>
         </div>
         {/* most popular section end */}
 
         {/* trending part start */}
         <Heading title="Most Trending Recipes"></Heading>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 my-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 my-10 ">
           {mostTrendingData.map((data) => (
             <Trending key={data.id} chefData={data}></Trending>
           ))}

@@ -4,7 +4,7 @@ import "@smastrom/react-rating/style.css";
 const Popular = ({ data }) => {
   const { name, rating, recipe_img } = data;
   return (
-    <div className="card  bg-base-100 shadow-xl rounded-none ">
+    <div className="card bg-white shadow-xl rounded-none ">
       <figure>
         <img
           src={recipe_img}

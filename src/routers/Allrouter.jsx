@@ -38,6 +38,7 @@ const router = createBrowserRouter([
       {
         path: "about",
         element: <About></About>,
+        loader: () => fetch("https://re-zancuisine-server-re-zan.vercel.app"),
       },
       {
         path: "blog",

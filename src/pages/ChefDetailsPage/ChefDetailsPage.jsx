@@ -41,7 +41,7 @@ const ChefDetailsPage = () => {
         }}
       >
         <div className="hero-overlay bg-opacity-60"></div>
-        <div className="hero-content text-center lg:text-left text-neutral-content grid grid-cols-1 lg:grid-cols-2  gap-2  bg-base-100 p-4 lg:p-20 my-8  lg:my-20  bg-opacity-40 z-0">
+        <div className="hero-content text-center lg:text-left text-neutral-content grid grid-cols-1 lg:grid-cols-2  gap-2 bg-white  p-4 lg:p-20 my-8  lg:my-20  bg-opacity-40 z-0">
           <div className="max-w-md z-10">
             <h1 className="mb-5 text-4xl lg:text-5xl text-red-700 font-semibold title_text">
               {chef}

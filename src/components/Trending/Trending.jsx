@@ -4,7 +4,7 @@ import { FaUserAlt } from "react-icons/fa";
 const Trending = ({ chefData }) => {
   const { chef, best_recipes } = chefData;
   return (
-    <div className="card  bg-base-100 shadow-xl rounded-none">
+    <div className="card bg-white shadow-xl rounded-none">
       <figure>
         <img
           src={best_recipes[0].recipe_img}

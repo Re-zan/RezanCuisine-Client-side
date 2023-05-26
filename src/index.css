@@ -4,6 +4,8 @@
 
 body {
   font-family: "Open Sans", sans-serif;
+  background-color: #ffffff;
+  color: black;
 }
 
 .title_text {
@@ -19,6 +21,7 @@ body {
 }
 .my_conatiner {
   @apply sm:max-w-xl md:max-w-full lg:max-w-screen-xl mx-auto;
+  background-color: #ffffff;
 }
 
 .img_hover {

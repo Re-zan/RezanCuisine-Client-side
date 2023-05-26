@@ -4,12 +4,14 @@ import { AuthContext } from "../../providers/AuthProviders";
 
 const Profile = () => {
   const { user, profile } = useContext(AuthContext);
+
   const handelarUpdate = (event) => {
     const form = event.target;
     const name = form.name.value;
     const photo = form.photo.value;
 
     profile(user, name, photo);
+
     form.reset();
   };
   return (
@@ -32,6 +34,7 @@ const Profile = () => {
               placeholder="Enter your name"
               className="input input-bordered   md:my-2 md:py-4 rounded-none"
               name="name"
+              defaultValue={user?.displayName}
             />
           </div>
 
@@ -41,6 +44,7 @@ const Profile = () => {
               placeholder="Enter your photo"
               className="input input-bordered my-2 py-4 rounded-none"
               name="photo"
+              defaultValue={user?.email}
             />
           </div>
 

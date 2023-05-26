@@ -7,7 +7,7 @@ const Chefsection = ({ chefData }) => {
   const { id, img_url, chef, years_of_experience, num_recipes, likes } =
     chefData;
   return (
-    <div className="card  bg-base-100 shadow-xl rounded-none">
+    <div className="card   shadow-xl rounded-none bg-white">
       <figure>
         <LazyLoad width={500} effect={blur}>
           <img
