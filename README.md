@@ -1,14 +1,14 @@
-# JOB-HUB
+# Rezan-Cuisine
 
-A Beautiful Job Searching And Applying Website
+A Beautiful chef and their recipies related website
 
 ## Live Link
 
-- Hosted in Netlify -> [JOB-HUB](https://job-hub-ass.netlify.app/statistics)
+- Hosted in Firebase -> [Rezan-Cuisine](https://rezancuisine.web.app/)
 
-## Starter Template
+## GitHub repositorie
 
-- GitHub Repo -> [job-hub starter](https://github.com/Porgramming-Hero-web-course/b7a9-career-hub-Re-zan)
+- GitHub Repo -> [Rezan-Cuisine GitHub Repo](https://github.com/Re-zan/RezanCuisine-Client-side)
 
 ## React Router Dom v6.4
 
