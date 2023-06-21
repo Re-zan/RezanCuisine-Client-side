@@ -17,7 +17,7 @@ const Banner = (props) => {
         <p className="my-10  text-gray-800 text-base md:text-xl font-medium ">
           {props.desc}
         </p>
-        <Link to="/">
+        <Link to="/allrecipies">
           {" "}
           <button className="btn bttn "> {props.btnDes}</button>
         </Link>

@@ -18,7 +18,7 @@ const Chefsection = ({ chefData }) => {
         </LazyLoad>
 
         <Link to={`/chefrecipes/${id}`}>
-          <div className="badge border-0 absolute top-0 end-0 p-4 mt-5 me-5 bg-red-600">
+          <div className="badge border-0 absolute top-0 end-0 p-4 mt-5 me-5 bg-red-600 text-white">
             <FaEye className="me-2"></FaEye> View Recipes
           </div>
         </Link>

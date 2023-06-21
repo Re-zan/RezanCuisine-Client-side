@@ -14,7 +14,7 @@ const Testimonial = () => {
       .then((res) => res.json())
       .then((data) => setTestimonial(data));
   }, []);
-  console.log(testimonial);
+
   return (
     <Swiper
       slidesPerView={3}

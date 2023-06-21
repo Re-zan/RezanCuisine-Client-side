@@ -10,6 +10,7 @@ import Profile from "../pages/Profile/Profile";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
 import ChefDetailsPage from "../pages/ChefDetailsPage/ChefDetailsPage";
 import PrivateRoutes from "./PrivateRoutes";
+import Allrecipies from "../pages/AllRecipies/Allrecipies";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,11 @@ const router = createBrowserRouter([
       {
         path: "blog",
         element: <Blog></Blog>,
+      },
+      {
+        path: "allrecipies",
+        element: <Allrecipies></Allrecipies>,
+        loader: () => fetch("https://re-zancuisine-server-re-zan.vercel.app"),
       },
       {
         path: "login",

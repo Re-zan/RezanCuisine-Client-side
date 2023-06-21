@@ -6,13 +6,16 @@ const PrivateRoutes = ({ children }) => {
   const { user, loader } = useContext(AuthContext);
 
   const location = useLocation();
-  if (loader) {
-    return <button className="btn loading mx-auto">loading</button>;
-  }
+
   if (user) {
     return children;
   }
-  return <Navigate to="/login" replace state={{ from: location }}></Navigate>;
+  if (loader) {
+    return (
+      <button className="btn loading mx-auto w-60 text-white">loading</button>
+    );
+  }
+  return <Navigate to="/login" state={{ from: location }} replace></Navigate>;
 };
 
 export default PrivateRoutes;

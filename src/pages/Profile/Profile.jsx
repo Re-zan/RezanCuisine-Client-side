@@ -6,12 +6,12 @@ const Profile = () => {
   const { user, profile } = useContext(AuthContext);
 
   const handelarUpdate = (event) => {
+    event.preventDefault();
     const form = event.target;
     const name = form.name.value;
     const photo = form.photo.value;
 
     profile(user, name, photo);
-
     form.reset();
   };
   return (
@@ -25,14 +25,14 @@ const Profile = () => {
             <img
               src={user?.photoURL}
               alt={user?.displayName}
-              className="mx-auto rounded-full w-6/12"
+              className="mx-auto rounded-full w-6/12 "
             />
           </div>
           <div className="form-control  ">
             <input
               type="text"
               placeholder="Enter your name"
-              className="input input-bordered   md:my-2 md:py-4 rounded-none"
+              className="input input-bordered   md:my-2 md:py-4 rounded-none text-white"
               name="name"
               defaultValue={user?.displayName}
             />
@@ -42,7 +42,7 @@ const Profile = () => {
             <input
               type="text"
               placeholder="Enter your photo"
-              className="input input-bordered my-2 py-4 rounded-none"
+              className="input input-bordered my-2 py-4 rounded-none text-white"
               name="photo"
               defaultValue={user?.email}
             />

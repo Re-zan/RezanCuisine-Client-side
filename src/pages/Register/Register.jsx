@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Form, Link, useNavigate } from "react-router-dom";
+import { Form, Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProviders";
 const Register = () => {
   //context
@@ -8,6 +8,8 @@ const Register = () => {
   //states
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   //register start
   const handalerRegister = (event) => {
     event.preventDefault();
@@ -28,7 +30,7 @@ const Register = () => {
         const loggedUser = resutlt.user;
         profile(loggedUser, name, photo);
         form.reset();
-        navigate("/");
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -48,7 +50,7 @@ const Register = () => {
             <input
               type="text"
               placeholder="Enter your name"
-              className="input input-bordered   md:my-2 md:py-4 rounded-none"
+              className="input input-bordered   md:my-2 md:py-4 rounded-none "
               name="name"
             />
           </div>
@@ -56,7 +58,7 @@ const Register = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="input input-bordered my-2 py-4 rounded-none"
+              className="input input-bordered my-2 py-4 rounded-none "
               name="email"
               required
             />
@@ -65,7 +67,7 @@ const Register = () => {
             <input
               type="text"
               placeholder="Enter your photo url:"
-              className="input input-bordered my-2 py-4 rounded-none"
+              className="input input-bordered my-2 py-4 rounded-none "
               name="photo"
             />
           </div>
@@ -73,7 +75,7 @@ const Register = () => {
             <input
               type="password"
               placeholder="Enter your password"
-              className="input input-bordered my-2 py-4 rounded-none"
+              className="input input-bordered my-2 py-4 rounded-none "
               name="password"
               required
             />

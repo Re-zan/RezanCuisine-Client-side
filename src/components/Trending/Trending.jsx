@@ -12,7 +12,7 @@ const Trending = ({ chefData }) => {
           className=" h-80 w-full object-cover relative img_hover"
         />
 
-        <div className="badge border-0 absolute top-0 end-0 p-4 mt-5 me-5 bg-red-600">
+        <div className="badge border-0 absolute top-0 end-0 p-4 mt-5 me-5 bg-red-600 text-white">
           <FaUserAlt className="me-2"></FaUserAlt> by {chef}
         </div>
       </figure>

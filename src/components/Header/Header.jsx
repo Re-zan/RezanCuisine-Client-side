@@ -73,7 +73,7 @@ const Header = () => {
           to="/"
           className="btn btn-ghost normal-case sm:text-2xl md:text-3xl hover:bg-transparent hover:scale-y-50"
         >
-          Re-zan<span className=" text-red-600">Cuisine</span>
+          Re-zan<span className=" text-red-600">Cuisine </span>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
@@ -104,7 +104,7 @@ const Header = () => {
           </NavLink>
         </ul>
       </div>
-      <div className="navbar-end">
+      <div className="navbar-end bg-white">
         {user ? (
           <>
             <div className="dropdown dropdown-end">
@@ -125,7 +125,7 @@ const Header = () => {
 
               <ul
                 tabIndex={0}
-                className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+                className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-white rounded-box w-52"
               >
                 <Link to="/profile">
                   {" "}

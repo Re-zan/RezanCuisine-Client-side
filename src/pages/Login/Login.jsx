@@ -65,14 +65,14 @@ const Login = () => {
         <ToastContainer />
         <Form
           onSubmit={handelarLogin}
-          className="sm:w-6/12 md:w-8/12 sm:px-6 md:px-24 py-10 sm:mx-0 md:mx-auto   bg-red-50 border rounded  shadow-lg"
+          className="sm:w-6/12 md:w-8/12 sm:px-6 md:px-24 py-10 sm:mx-0 md:mx-auto   bg-red-50 border rounded  shadow-lg "
         >
           <h2 className="title_text py-5 text-4xl">Login Here</h2>
           <div className="form-control">
             <input
               type="email"
               placeholder="Enter your email"
-              className="input input-bordered my-2 py-4 rounded-none"
+              className="input input-bordered my-2 py-4 rounded-none "
               ref={emailref}
               name="email"
             />
@@ -81,7 +81,7 @@ const Login = () => {
             <input
               type="password"
               placeholder="Enter your password"
-              className="input input-bordered my-2 py-4 rounded-none"
+              className="input input-bordered my-2 py-4 rounded-none "
               name="password"
             />
             <label className="label">

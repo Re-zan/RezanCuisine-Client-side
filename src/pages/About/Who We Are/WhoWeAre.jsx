@@ -14,7 +14,7 @@ const WhoWeAre = () => {
           <h4 className="title_text text-4xl text-red-700 font-semibold">
             Who we are
           </h4>
-          <p className=" w-[500px] py-5">
+          <p className=" w-[300px] lg:w-[500px] py-5">
             At Re-zanCuisine, we are a culinary team driven by a relentless
             passion for creating extraordinary dining experiences. Our talented
             chefs, led by renowned culinary master Chef [Name], weave together

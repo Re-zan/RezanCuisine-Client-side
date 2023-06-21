@@ -25,7 +25,6 @@ const ChefDetailsPage = () => {
     best_recipes,
   } = data;
 
-  const [hiddenBtn, setHiddenBtn] = useState(true);
   const handelarReact = () => {
     toast.success("This is my favourite recipe");
   };
@@ -123,14 +122,8 @@ const ChefDetailsPage = () => {
                 </div>
 
                 <div className="border-t-2 py-4 border-red-700 flex justify-between">
-                  <div
-                    className={`${hiddenBtn ? "" : "hidden"}`}
-                    onClick={handelarReact}
-                  >
-                    <button
-                      className="btn bttn "
-                      onClick={() => setHiddenBtn(!hiddenBtn)}
-                    >
+                  <div>
+                    <button className="btn bttn " onClick={handelarReact}>
                       Favorite recipe{" "}
                       <span className="ms-3">
                         <FaHeart />
