@@ -1,15 +1,17 @@
 # Rezan-Cuisine
 
-A Beautiful chef and their recipies related website
+A chef and their recipes-related website. It describes Bangla cuisine efficiently.
 
 ## Features
 
 - We used express js for the server side
 - We used react for the client side
-- Data loading from server side
-- We used firbase for our authentication
-- We do our live side hosting in firebase
-- We do our server side hosting in vercel
+- Data loading from the server side
+- We used Firebase for our authentication
+- We do our live side hosting in Firebase
+- We do our server-side hosting in Vercel
+- •	It has secured API. Only authentication users can view the chef details page.
+- You can download faq questions as a pdf file
 
 ## Live Link
 
